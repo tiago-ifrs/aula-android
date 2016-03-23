@@ -2,12 +2,14 @@ package com.example.aula;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
@@ -26,8 +28,13 @@ public class MainActivity extends Activity {
         
         bt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+            	Editable texto = et.getText();
                 // Perform action on click
             	tv.setText(et.getText());
+            	
+            	//Toast toast = Toast.makeText(tv.getContext(), texto, Toast.LENGTH_SHORT);
+            	Toast toast = Toast.makeText(v.getContext(), texto, Toast.LENGTH_SHORT);
+            	toast.show();
             }
         });
 
